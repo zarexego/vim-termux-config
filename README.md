@@ -4,7 +4,7 @@ My Vim configuration for Termux and Linux.
 
 ## Установка
 
-git clone https://github.com/zarexego/vim-config.git ~/vim-config
+git clone https://github.com/zarexego/vim-termux-config.git ~/vim-termux-config
 cd ~/vim-config
 bash install.sh
 
