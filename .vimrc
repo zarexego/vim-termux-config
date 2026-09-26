@@ -1,17 +1,13 @@
-" ============================================================
-" Vim config for Termux (Android)
-" ============================================================
 
-" --- База ---
 set nocompatible
 syntax on
 filetype plugin indent on
 
-" --- Лидер ---
+
 let mapleader = " "
 let maplocalleader = " "
 
-" --- Интерфейс ---
+
 set number
 set relativenumber
 set cursorline
@@ -23,7 +19,6 @@ set laststatus=2
 set termguicolors
 set encoding=utf-8
 
-" --- Поведение ---
 set mouse=a
 set splitright
 set splitbelow
@@ -34,7 +29,7 @@ set nobackup
 set noswapfile
 set noundofile
 
-" --- Отступы ---
+
 set expandtab
 set shiftwidth=4
 set tabstop=4
@@ -42,47 +37,47 @@ set softtabstop=4
 set autoindent
 set smartindent
 
-" --- Поиск ---
+
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
 nnoremap <Esc> :noh<CR>
 
-" --- Пробелы и переносы ---
+
 set listchars=tab:»·,trail:·,extends:>
 set list
 set wrap
 set linebreak
 
-" --- Фолдинг ---
+
 set foldmethod=indent
 set foldlevel=1
 set foldnestmax=3
 
-" --- Автодополнение ---
+
 set completeopt=menuone,noinsert,noselect
 
-" --- Тема TokyoNight ---
+
 let g:tokyonight_style = 'night'
 let g:tokyonight_enable_italic = 0
 colorscheme tokyonight
 
-" --- vim-airline ---
+
 let g:airline_theme = 'tokyonight'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 
-" --- NERDTree ---
+
 let g:NERDTreeShowHidden = 0
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.git$', '\.class$']
 let g:NERDTreeWinSize = 25
 let g:NERDTreeQuitOnOpen = 1
 
-" --- jedi-vim ---
+
 let g:jedi#completions_enabled = 1
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#popup_on_dot = 1
@@ -95,7 +90,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = "<leader>rn"
 let g:jedi#documentation_command = "K"
 
-" --- Кеймапы ---
+
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :qa!<CR>
@@ -120,7 +115,7 @@ vnoremap > >gv
 nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap <leader>ef :NERDTreeFind<CR>
 
-" --- Терминал ---
+
 nnoremap <leader>th :botright terminal ++rows=12<CR>
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-h> <C-\><C-n><C-w>h
@@ -128,14 +123,14 @@ tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
-" --- Python ---
+
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType python setlocal textwidth=79
 autocmd FileType python setlocal colorcolumn=79
 
 nnoremap <leader>r :w<CR>:!python3 %<CR>
 
-" --- Буфер обмена ---
+
 if executable('termux-clipboard-set')
     vnoremap <leader>y :w !termux-clipboard-set<CR><CR>
     nnoremap <leader>y :.w !termux-clipboard-set<CR><CR>
@@ -146,7 +141,7 @@ if has('clipboard')
     set clipboard=unnamedplus
 endif
 
-" --- Автокоманды ---
+
 augroup vimrc
     autocmd!
 
